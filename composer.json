@@ -1,8 +1,14 @@
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/j3j5/safe"
+        }
+    ],
     "require": {
         "php": "^8.0",
-        "thecodingmachine/safe": "^1.3",
-        "nunomaduro/larastan": "dev-master",
+        "thecodingmachine/safe": "dev-classmap-replaces-psr4",
+        "nunomaduro/larastan": "^2.1",
         "orchestra/testbench": "^7.0"
     },
     "autoload": {
