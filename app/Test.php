@@ -2,12 +2,30 @@
 
 namespace App;
 
-use function Safe\openssl_pkcs12_read;
+use function Safe\array_replace_recursive;
+use function Safe\date_parse_from_format;
+use function Safe\json_decode;
 
 class Test
 {
-    private function test(): void
+    public function test(): array
     {
-        openssl_pkcs12_read('1', $certs, '2');
+        $base = array('citrus' => array( "orange") , 'berries' => array("blackberry", "raspberry"), );
+        $replacements = array('citrus' => array('pineapple'), 'berries' => array('blueberry'));
+
+        return \Safe\array_replace_recursive($base, $replacements);
+    }
+
+    public function test2() : ?array
+    {
+        $format = '111';
+        $datetime = '123456';
+        return date_parse_from_format($format, $datetime);
+    }
+
+    public function test3() : mixed
+    {
+        $json = '{asdfasdfasd';
+        return json_decode($json);
     }
 }

@@ -2,12 +2,12 @@
 
 namespace App;
 
-use function Safe\dns_get_record;
+use function Safe\mime_content_type;
 
 class Test2
 {
-    private function test(): void
+    public function test(): string
     {
-        dns_get_record('example.com');
+        return mime_content_type(__FILE__);
     }
 }

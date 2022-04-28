@@ -6,8 +6,8 @@ use function Safe\json_encode;
 
 class Test3
 {
-    private function test(): void
+    public function test(): string
     {
-        json_encode('test');
+        return json_encode('test');
     }
 }
